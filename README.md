@@ -38,6 +38,7 @@ The framework is designed for:
 
 ## Repository Structure
 
+```
 delta-lake-upsert-framework/
 │
 ├── framework/
@@ -50,6 +51,7 @@ delta-lake-upsert-framework/
 │
 └── tests/
 └── test_upsert_logic.py
+```
 
 ---
 
