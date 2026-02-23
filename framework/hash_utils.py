@@ -15,7 +15,11 @@ if TYPE_CHECKING:
     from pyspark.sql import DataFrame
 
 
-def add_row_hash(df: "DataFrame", columns: List[str], hash_col: str = "row_hash") -> "DataFrame":
+def add_row_hash(
+    df: "DataFrame",
+    columns: List[str],
+    hash_col: str = "row_hash",
+) -> "DataFrame":
     """
     Adds a SHA-256 row hash column computed from the given list of columns.
 
