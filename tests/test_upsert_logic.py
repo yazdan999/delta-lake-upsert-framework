@@ -9,7 +9,7 @@ def test_engine_initialisation():
     engine = DeltaUpsertEngine(
         spark=None,
         target_table_path="dummy_path",
-        key_columns=["id"]
+        key_columns=["id"],
     )
 
     assert engine.key_columns == ["id"]
