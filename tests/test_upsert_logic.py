@@ -1,10 +1,16 @@
 """
-Placeholder tests for DeltaUpsertEngine.
-
-In a real environment, you would use pytest + a local Spark session
-(or a CI container) to validate merge conditions and change detection.
+Basic validation tests for DeltaUpsertEngine.
 """
 
+from framework.upsert_engine import DeltaUpsertEngine
 
-def test_placeholder():
-    assert True
+
+def test_engine_initialisation():
+    engine = DeltaUpsertEngine(
+        spark=None,
+        target_table_path="dummy_path",
+        key_columns=["id"]
+    )
+
+    assert engine.key_columns == ["id"]
+    assert engine.hash_column == "row_hash"
