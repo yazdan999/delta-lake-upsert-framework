@@ -1,5 +1,7 @@
 """
 Basic validation tests for DeltaUpsertEngine.
+
+These tests are intentionally lightweight for CI and do not require Spark.
 """
 
 from framework.upsert_engine import DeltaUpsertEngine
