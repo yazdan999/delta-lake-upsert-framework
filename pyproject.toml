@@ -1,0 +1,7 @@
+[tool.ruff]
+line-length = 100
+exclude = ["**/__pycache__", ".venv", "build", "dist"]
+
+[tool.ruff.lint]
+# Ignore "imported but unused" in package init files
+per-file-ignores = { "__init__.py" = ["F401"] }
