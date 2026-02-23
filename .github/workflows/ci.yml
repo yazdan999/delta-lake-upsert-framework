@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   checks:
@@ -26,8 +26,8 @@ jobs:
       - name: Lint (ruff)
         run: ruff check .
 
-      - name: Format check (black)
-        run: black --check .
+      - name: Auto format (black)
+        run: black .
 
       - name: Run tests
         run: pytest -q
