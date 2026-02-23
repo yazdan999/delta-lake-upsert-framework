@@ -29,16 +29,18 @@ class DeltaUpsertEngine:
         return " AND ".join(conditions)
 
     def execute_upsert(self, source_df: DataFrame):
-        print("Starting Delta upsert process...")
-
+        from framework.logging_utils import log_info
+    
+        log_info("Starting Delta upsert process...")
+    
         delta_table = DeltaTable.forPath(
             self.spark,
             self.target_table_path
         )
-
+    
         merge_condition = self._build_merge_condition()
-
-        (
+    
+        merge_builder = (
             delta_table.alias("target")
             .merge(
                 source_df.alias("source"),
@@ -49,7 +51,12 @@ class DeltaUpsertEngine:
                 set={col_name: f"source.{col_name}" for col_name in source_df.columns}
             )
             .whenNotMatchedInsertAll()
-            .execute()
         )
-
-        print("Delta upsert completed successfully.")
+    
+        merge_builder.execute()
+    
+        log_info("Delta upsert completed successfully.")
+    
+        return {
+            "status": "completed"
+        }
