@@ -1,5 +1,7 @@
 # Delta Lake Upsert Framework (PySpark)
 
+[![CI](https://github.com/yazdan999/delta-lake-upsert-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/yazdan999/delta-lake-upsert-framework/actions/workflows/ci.yml)
+
 Production-ready Delta Lake upsert framework using PySpark, supporting:
 
 - Hash-based change detection
