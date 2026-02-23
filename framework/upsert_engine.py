@@ -12,7 +12,7 @@ CI-friendly: avoids importing pyspark/delta at import-time.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Dict, List, Optional, Any
+from typing import TYPE_CHECKING, Any, Dict, List
 
 if TYPE_CHECKING:
     from pyspark.sql import DataFrame
