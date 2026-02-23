@@ -65,6 +65,16 @@ delta-lake-upsert-framework/
 
 ---
 
+## Engineering Design Highlights
+
+- Null-safe merge using Spark `<=>`
+- Hash-based update detection to minimise unnecessary writes
+- Modular framework structure for reusability
+- Separation of concerns (engine / hash / logging)
+- CI/CD-ready repository layout
+
+---
+
 ## Purpose
 
 This project showcases production-grade Delta Lake merge logic and engineering discipline suitable for enterprise lakehouse implementations.
